@@ -1,26 +1,33 @@
-body {
-  background-color: darkblue;
+main {
+  color: aliceblue;
+  background-color: black;
 }
 header {
-  background-color: dimgray;
+  background-color: rgb(145, 139, 139);
   text-align: center;
-  border: solid;
+  padding: 20px;
+  color: darkblue;
 }
 h1 {
   font-size: 50px;
+  font-family: sans-serif;
 }
+
 h2 {
   font-size: 36px;
+  font-family: sans-serif;
   text-align: center;
+  text-decoration: underline;
 }
 section {
   font-size: 26px;
   text-align: center;
-  background-color: gray;
+  font-family: sans-serif;
 }
 table {
   margin: auto;
   font-size: 26px;
+  font-family: sans-serif;
   width: max-content;
   text-align: left;
 }
@@ -33,9 +40,6 @@ table {
   text-align: center;
 }
 a:link {
-  color: black;
+  color: darkblue;
   text-decoration: none;
-}
-img {
-  border: solid;
 }
