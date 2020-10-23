@@ -1,22 +1,21 @@
 main {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   border: solid;
-  background-color: darkblue;
+  background-color: midnightblue;
 }
 header {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
   background-color: silver;
-  color: darkblue;
-  border-bottom: solid;
-  margin: 5px;
-  padding: 5px;
+  color: midnightblue;
 }
 h1 {
   position: relative;
@@ -27,22 +26,20 @@ h1 {
   color: black;
   position: relative;
   text-align: left;
-  margin: 20px;
-  left: 35px;
   text-decoration: none;
+  top: 30px;
 }
 h2 {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
   text-decoration: underline;
 }
 div {
-  display: inline-block;
   border: solid;
   background-color: silver;
   width: 470px;
   text-align: justify;
-  margin: 2px;
+  margin: 4px;
   padding: 4px;
   border-radius: 20px;
 }
@@ -56,9 +53,201 @@ h3 {
   font-size: 26px;
   text-align: center;
   text-decoration: underline;
-  color: darkblue;
+  color: midnightblue;
 }
 a[href] {
   color: black;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1022px) {
+  main {
+    font-size: 22px;
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+  .personalinfo {
+    font-size: 18px;
+  }
+  .Photo {
+    width: 330px;
+    height: 270px;
+    align-self: center;
+    position: relative;
+    top: 60px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 784px) {
+  main {
+    font-size: 22px;
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+  .personalinfo {
+    font-size: 18px;
+  }
+  .Photo {
+    width: 330px;
+    height: 270px;
+    align-self: center;
+    position: relative;
+    top: 60px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 784px) {
+  main {
+    font-size: 22px;
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+  .personalinfo {
+    font-size: 18px;
+  }
+  .Photo {
+    width: 330px;
+    height: 270px;
+    align-self: center;
+    position: relative;
+    top: 60px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    font-size: 18px;
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+  .personalinfo {
+    font-size: 16px;
+  }
+  .Photo {
+    width: 270px;
+    height: 230px;
+    align-self: center;
+    position: relative;
+    top: 70px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  main {
+    font-size: 14px;
+    width: 320px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header {
+    width: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+  .Photo {
+    width: 270px;
+    height: 230px;
+    align-self: center;
+    position: relative;
+    top: 70px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 20px;
+  }
 }
