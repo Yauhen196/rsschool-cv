@@ -1,253 +1,177 @@
-main {
+.cv {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   border: solid;
-  background-color: midnightblue;
+  background-color: rgb(10, 20, 90);
 }
-header {
-  width: 100%;
+.head-part {
   display: flex;
-  flex-direction: row;
+  padding: 10px;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
-  background-color: silver;
-  color: midnightblue;
+  align-content: flex-start;
+  background-color: rgb(190, 190, 190);
+  color: rgb(10, 20, 90);;
+  margin: 0;
 }
-h1 {
-  position: relative;
-  right: 15px;
-  text-align: center;
+.main-header {
+  font-size: 40px;
+  margin: 0;
 }
-.personalinfo {
-  color: black;
-  position: relative;
-  text-align: left;
+.personal-info {
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  top: 30px;
 }
-h2 {
+.objective {
   text-align: center;
-  padding-top: 50px;
-  text-decoration: underline;
+  position: relative;
+  top: 50px;
+  font-size: 40px;
+  margin: 0;
 }
-div {
+.photo {
+  width: 400px;
+  height: 320px;
+  margin: 0;
+}
+.my-info {
   border: solid;
-  background-color: silver;
+  background-color: rgb(190, 190, 190);
   width: 470px;
   text-align: justify;
-  margin: 4px;
-  padding: 4px;
+  margin: 8px;
+  padding: 10px;
   border-radius: 20px;
 }
-section {
+.main-info {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-h3 {
-  font-size: 26px;
+.info-header {
+  font-size: 30px;
   text-align: center;
-  text-decoration: underline;
-  color: midnightblue;
+  color: rgb(10, 20, 90);;
+  font-style: italic;
 }
 a[href] {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
+@media screen and (max-width: 1062px) {
+  .my-info {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 1042px) {
+  .my-info {
+  width: 450px;
+  }
+}
 @media screen and (max-width: 1022px) {
-  main {
-    font-size: 22px;
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  header {
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
-  }
-  .personalinfo {
-    font-size: 18px;
-  }
-  .Photo {
-    width: 330px;
-    height: 270px;
-    align-self: center;
-    position: relative;
-    top: 60px;
-  }
-  h1 {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 26px;
-    text-align: center;
-  }
-  h3 {
-    font-size: 26px;
+  .my-info {
+  width: 420px;
   }
 }
-
-@media screen and (max-width: 784px) {
-  main {
+@media screen and (max-width: 962px) {
+  .cv {
     font-size: 22px;
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
   }
-  header {
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
-  }
-  .personalinfo {
-    font-size: 18px;
-  }
-  .Photo {
-    width: 330px;
-    height: 270px;
-    align-self: center;
-    position: relative;
-    top: 60px;
-  }
-  h1 {
+  .main-header {
     font-size: 32px;
   }
-  h2 {
-    font-size: 26px;
-    text-align: center;
-  }
-  h3 {
-    font-size: 26px;
-  }
-}
-
-@media screen and (max-width: 784px) {
-  main {
-    font-size: 22px;
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  header {
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
-  }
-  .personalinfo {
-    font-size: 18px;
-  }
-  .Photo {
-    width: 330px;
-    height: 270px;
-    align-self: center;
+  .photo {
     position: relative;
-    top: 60px;
+    left: 30px;
+    width: 370px;
+    height: 300px;
   }
-  h1 {
+  .objective {
     font-size: 32px;
   }
-  h2 {
-    font-size: 26px;
-    text-align: center;
+  .my-info {
+    width: 400px;
   }
-  h3 {
-    font-size: 26px;
-  }
+  .info-header {
+    font-size: 30px;
 }
-
-@media screen and (max-width: 480px) {
-  main {
-    font-size: 18px;
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  header {
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
-  }
-  .personalinfo {
-    font-size: 16px;
-  }
-  .Photo {
-    width: 270px;
-    height: 230px;
-    align-self: center;
-    position: relative;
-    top: 70px;
-  }
-  h1 {
+@media screen and (max-width: 875px) {
+  .cv {
     font-size: 20px;
   }
-  h2 {
-    font-size: 18px;
-    text-align: center;
+  .main-header {
+    font-size: 28px;
   }
-  h3 {
-    font-size: 18px;
+  .photo {
+    position: relative;
+    left: 30px;
+    width: 370px;
+    height: 300px;
+  }
+  .objective {
+    font-size: 24px;
+  }
+  .info-header {
+    font-size: 26px;
   }
 }
-
-@media screen and (max-width: 340px) {
-  main {
+@media screen and (max-width: 780px) {
+  .main-header {
+    font-size: 28px;
+  }
+  .objective {
+    position: relative;
+    top: 50px;
+    font-size: 22px;
+  }
+  .photo {
+    width: 300px;
+    height: 250px;
+  }
+  .my-info {
+    font-size: 24px;
+  }
+  .info-header {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .main-header {
+    font-size: 26px;
+  }
+  .objective {
+    position: relative;
+    top: 0px;
+    font-size: 20px;
+  }
+  .my-info {
+    font-size: 20px;
+  }
+  .info-header {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .cv {
     font-size: 14px;
-    width: 320px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
   }
-  header {
-    width: auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
+  .photo {
+    width: 240px;
+    height: 180px;
   }
-  .Photo {
-    width: 270px;
-    height: 230px;
-    align-self: center;
+  .main-header {
+    font-size: 20px;
+  }
+  .personal-info {
+    text-align: left;
+    font-size: 14px;
+  }
+  .objective {
     position: relative;
-    top: 70px;
-  }
-  h1 {
-    font-size: 20px;
-  }
-  h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-  h3 {
-    font-size: 20px;
+    top: 0px;
   }
 }
