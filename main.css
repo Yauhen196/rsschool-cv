@@ -14,7 +14,7 @@
   justify-content: space-around;
   align-content: flex-start;
   background-color: rgb(190, 190, 190);
-  color: rgb(10, 20, 90);;
+  color: rgb(10, 20, 90);
   margin: 0;
 }
 .main-header {
@@ -54,7 +54,7 @@
 .info-header {
   font-size: 30px;
   text-align: center;
-  color: rgb(10, 20, 90);;
+  color: rgb(10, 20, 90);
   font-style: italic;
 }
 a[href] {
@@ -69,12 +69,12 @@ a[href] {
 }
 @media screen and (max-width: 1042px) {
   .my-info {
-  width: 450px;
+    width: 450px;
   }
 }
 @media screen and (max-width: 1022px) {
   .my-info {
-  width: 420px;
+    width: 420px;
   }
 }
 @media screen and (max-width: 962px) {
@@ -98,6 +98,7 @@ a[href] {
   }
   .info-header {
     font-size: 30px;
+  }
 }
 @media screen and (max-width: 875px) {
   .cv {
