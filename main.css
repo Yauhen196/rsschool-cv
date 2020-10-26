@@ -27,10 +27,8 @@
 }
 .objective {
   text-align: center;
-  position: relative;
-  top: 50px;
+  margin-top: 60px;
   font-size: 40px;
-  margin: 0;
 }
 .photo {
   width: 400px;
@@ -85,8 +83,7 @@ a[href] {
     font-size: 32px;
   }
   .photo {
-    position: relative;
-    left: 30px;
+    margin-left: 30px;
     width: 370px;
     height: 300px;
   }
@@ -96,9 +93,6 @@ a[href] {
   .my-info {
     width: 400px;
   }
-  .info-header {
-    font-size: 30px;
-  }
 }
 @media screen and (max-width: 875px) {
   .cv {
@@ -106,12 +100,6 @@ a[href] {
   }
   .main-header {
     font-size: 28px;
-  }
-  .photo {
-    position: relative;
-    left: 30px;
-    width: 370px;
-    height: 300px;
   }
   .objective {
     font-size: 24px;
@@ -121,12 +109,7 @@ a[href] {
   }
 }
 @media screen and (max-width: 780px) {
-  .main-header {
-    font-size: 28px;
-  }
   .objective {
-    position: relative;
-    top: 50px;
     font-size: 22px;
   }
   .photo {
@@ -145,34 +128,37 @@ a[href] {
     font-size: 26px;
   }
   .objective {
-    position: relative;
-    top: 0px;
-    font-size: 20px;
+    margin-top: auto;
   }
   .my-info {
-    font-size: 20px;
+    font-size: 22px;
   }
   .info-header {
     font-size: 22px;
   }
+  .info-header {
+    margin: 4px;
+  }
 }
 @media screen and (max-width: 433px) {
   .cv {
-    font-size: 14px;
+    font-size: 18px;
   }
   .photo {
     width: 240px;
     height: 180px;
   }
   .main-header {
+    font-size: 18px;
+  }
+  .objective {
     font-size: 20px;
   }
   .personal-info {
     text-align: left;
     font-size: 14px;
   }
-  .objective {
-    position: relative;
-    top: 0px;
+  .my-info {
+    font-size: 18px;
   }
 }
