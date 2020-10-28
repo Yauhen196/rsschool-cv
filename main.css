@@ -1,64 +1,164 @@
-main {
+.cv {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   border: solid;
-  background-color: darkblue;
+  background-color: rgb(10, 20, 90);
 }
-header {
+.head-part {
   display: flex;
-  flex-direction: row;
+  padding: 10px;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
-  background-color: silver;
-  color: darkblue;
-  border-bottom: solid;
-  margin: 5px;
-  padding: 5px;
+  align-content: flex-start;
+  background-color: rgb(190, 190, 190);
+  color: rgb(10, 20, 90);
+  margin: 0;
 }
-h1 {
-  position: relative;
-  right: 15px;
-  text-align: center;
+.main-header {
+  font-size: 40px;
+  margin: 0;
 }
-.personalinfo {
-  color: black;
-  position: relative;
-  text-align: left;
-  margin: 20px;
-  left: 35px;
+.personal-info {
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
-h2 {
+.objective {
   text-align: center;
-  padding-top: 100px;
-  text-decoration: underline;
+  margin-top: 60px;
+  font-size: 40px;
 }
-div {
-  display: inline-block;
+.photo {
+  width: 400px;
+  height: 320px;
+  margin: 0;
+}
+.my-info {
   border: solid;
-  background-color: silver;
+  background-color: rgb(190, 190, 190);
   width: 470px;
   text-align: justify;
-  margin: 2px;
-  padding: 4px;
+  margin: 8px;
+  padding: 10px;
   border-radius: 20px;
 }
-section {
+.main-info {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-h3 {
-  font-size: 26px;
+.info-header {
+  font-size: 30px;
   text-align: center;
-  text-decoration: underline;
-  color: darkblue;
+  color: rgb(10, 20, 90);
+  font-style: italic;
 }
 a[href] {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+@media screen and (max-width: 1062px) {
+  .my-info {
+    width: 460px;
+  }
+}
+@media screen and (max-width: 1042px) {
+  .my-info {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 1022px) {
+  .my-info {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 962px) {
+  .cv {
+    font-size: 22px;
+  }
+  .main-header {
+    font-size: 32px;
+  }
+  .photo {
+    margin-left: 30px;
+    width: 370px;
+    height: 300px;
+  }
+  .objective {
+    font-size: 32px;
+  }
+  .my-info {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 875px) {
+  .cv {
+    font-size: 20px;
+  }
+  .main-header {
+    font-size: 28px;
+  }
+  .objective {
+    font-size: 24px;
+  }
+  .info-header {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .objective {
+    font-size: 22px;
+  }
+  .photo {
+    width: 300px;
+    height: 250px;
+  }
+  .my-info {
+    font-size: 24px;
+  }
+  .info-header {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .main-header {
+    font-size: 26px;
+  }
+  .objective {
+    margin-top: auto;
+  }
+  .my-info {
+    font-size: 22px;
+  }
+  .info-header {
+    font-size: 22px;
+  }
+  .info-header {
+    margin: 4px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .cv {
+    font-size: 18px;
+  }
+  .photo {
+    width: 240px;
+    height: 180px;
+  }
+  .main-header {
+    font-size: 18px;
+  }
+  .objective {
+    font-size: 20px;
+  }
+  .personal-info {
+    text-align: left;
+    font-size: 14px;
+  }
+  .my-info {
+    font-size: 18px;
+  }
 }
