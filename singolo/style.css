@@ -470,7 +470,7 @@ body {
 
   .menu-btn {
     display: flex;
-    align-items: center; 
+    align-items: center;
     position: fixed;
     top: 26px;
     left: 20px;
@@ -480,7 +480,7 @@ body {
     z-index: 2;
     border-radius: 5px;
   }
- 
+
   .menu-btn > span,
   .menu-btn > span::before,
   .menu-btn > span::after {
@@ -634,7 +634,7 @@ body {
   }
 
   .services-list {
-    padding-top: 25px;
+    padding: 25px 50px 0 50px;
     justify-content: center;
   }
 
@@ -694,6 +694,12 @@ body {
 
   .footer .footer-content > .footer-icons > li:first-child {
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .services-list {
+    padding: 25px 0 0 0;
   }
 }
 
