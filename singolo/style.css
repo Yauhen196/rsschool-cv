@@ -450,6 +450,7 @@ body {
     cursor: pointer;
     z-index: 2;
     border-radius: 5px;
+    background-color: #2d303a;
   }
 
   .menu-btn > span,
@@ -528,23 +529,27 @@ body {
     font-size: 24px;
   }
 
-  #menu-toggle:checked ~ .menu-btn > span {
+  #menu-toggle:checked ~ nav .menu-btn > span {
     transform: rotate(90deg);
   }
-  #menu-toggle:checked ~ .menu-btn > span::before {
+  #menu-toggle:checked ~ nav .menu-btn > span::before {
     transform: rotate(0deg);
   }
-  #menu-toggle:checked ~ .menu-btn > span::after {
+  #menu-toggle:checked ~ nav .menu-btn > span::after {
     transform: rotate(0deg);
   }
-  #menu-toggle:checked ~ .toggled-menu-box {
+  #menu-toggle:checked ~ nav .toggled-menu-box {
     visibility: visible;
     left: 0;
   }
 
-  #menu-toggle:checked ~ ul {
+  #menu-toggle:checked ul {
     visibility: visible;
     left: 0;
+  }
+
+  #menu-toggle:checked ~ .logo {
+    visibility: hidden;
   }
 
   .menu-btn > span,
