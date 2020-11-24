@@ -1,8 +1,8 @@
 let numbersBtns = document.querySelectorAll('.button-number');
 let operationsBtns = document.querySelectorAll('.button-operator');
-let clearBtns = document.querySelectorAll('.button-clear');
+let buttonC = document.getElementById ('c');
+let buttonCE = document.getElementById ('ce');
 let decimalBtn = document.getElementById('decimal');
-let resultBtn = document.getElementById('result');
 let display = document.getElementById('display');
 let MemoryCurrentNumber = 0;
 let MemoryNewNumber = false;
@@ -22,14 +22,6 @@ for (let i=0; i<operationsBtns.length; i++) {
         operations (e.target.textContent)
     });
 };
-
-for (let i=0; i<clearBtns.length; i++) {
-    let clearBtn = clearBtns[i];
-    clearBtn.addEventListener('click', function (e) {
-        clear (e.target.textContent)
-    });
-};
-
 
 decimalBtn.addEventListener('click', decimal);
 
@@ -72,7 +64,7 @@ function operations (op) {
 };
 
 function decimal (argument) {
-    var localDecimalMemory = display.value;
+    let localDecimalMemory = display.value;
     
     if(MemoryNewNumber) {
         localDecimalMemory = "0.";
@@ -82,21 +74,19 @@ function decimal (argument) {
             localDecimalMemory += "."
         }
     };
-
     display.value = localDecimalMemory;
 };
 
+buttonC.addEventListener('click', function (e) {
+    display.value = "0" 
+    MemoryNewNumber = true;
+    MemoryCurrentNumber = 0,
+    MemoryPendingOperation = "";
+});
 
-function clear(id) {
-    if(id === ce) {
-        display.value = "0";
-        MemoryNewNumber = true;
-    } else if(id === c) {
-        display.value = "0" 
-        MemoryNewNumber = true;
-        MemoryCurrentNumber = 0,
-        MemoryPendingOperation = "";
-    }
-};
+buttonCE.addEventListener('click', function (e) {
+    display.value = "0"
+    MemoryNewNumber = true;
+});
 
 
