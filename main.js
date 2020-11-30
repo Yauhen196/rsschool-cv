@@ -5,30 +5,29 @@ let buttonCE = document.getElementById ('ce');
 let decimalBtn = document.getElementById('decimal');
 let display = document.getElementById('display');
 let MemoryCurrentNumber = 0;
-let MemoryNewNumber = false;
+let IsNewNumberEntered = false;
 let MemoryPendingOperation = '';
-
 
 for (let i=0; i<numbersBtns.length; i++) {
     let numberBtn = numbersBtns[i];
     numberBtn.addEventListener('click', function (e) {
-        pressNumber (e.target.textContent)
+        pressNumber (e.target.name)
     });
 };
 
 for (let i=0; i<operationsBtns.length; i++) {
     let operationBtn = operationsBtns[i];
     operationBtn.addEventListener('click', function (e) {
-        operations (e.target.textContent)
+        doCalculations (e.target.name)
     });
 };
 
-decimalBtn.addEventListener('click', decimal);
+decimalBtn.addEventListener('click', makeDecimal);
 
 function pressNumber (number) {
-    if(MemoryNewNumber) {
+    if(IsNewNumberEntered) {
         display.value = number;
-        MemoryNewNumber = false;
+        IsNewNumberEntered = false;
     } else {
         if(display.value === "0") {
             display.value = number;
@@ -38,37 +37,39 @@ function pressNumber (number) {
     };
 };
 
-function operations (op) {
-    let localOperationMemory = display.value;
-        
-    if(MemoryNewNumber && MemoryPendingOperation !== "=") {
+function doCalculations (op) {
+    let localOperationMemory = +display.value;
+    
+    if(IsNewNumberEntered && MemoryPendingOperation !== "result") {
         display.value = MemoryCurrentNumber;
     } else {
-        MemoryNewNumber = true;
-        if (MemoryPendingOperation === "+") {
-            MemoryCurrentNumber += +localOperationMemory;  
-        } else if (MemoryPendingOperation === "-") {
-            MemoryCurrentNumber -= +localOperationMemory;  
-        } else if (MemoryPendingOperation === "*") {
-            MemoryCurrentNumber *= +localOperationMemory;  
-        } else if (MemoryPendingOperation === "/") {
-            MemoryCurrentNumber /= +localOperationMemory;  
-        } else if (MemoryPendingOperation === "X&sup2") {
-            MemoryCurrentNumber *= +MemoryCurrentNumber;
+        IsNewNumberEntered = true;
+        if (MemoryPendingOperation === "plus") {
+            MemoryCurrentNumber += localOperationMemory;  
+        } else if (MemoryPendingOperation === "minus") {
+            MemoryCurrentNumber -= localOperationMemory;  
+        } else if (MemoryPendingOperation === "multiply") {
+            MemoryCurrentNumber *= localOperationMemory;  
+        } else if (MemoryPendingOperation === "divide") {
+            MemoryCurrentNumber /= localOperationMemory;  
         } else {
             MemoryCurrentNumber = +localOperationMemory;  
         }
         display.value = MemoryCurrentNumber;
         MemoryPendingOperation = op;
     };
+
+    if(IsNewNumberEntered && MemoryPendingOperation === "square") {
+        display.value = MemoryCurrentNumber ** 2;
+    } 
 };
 
-function decimal (argument) {
+function makeDecimal (argument) {
     let localDecimalMemory = display.value;
     
-    if(MemoryNewNumber) {
+    if(IsNewNumberEntered) {
         localDecimalMemory = "0.";
-        MemoryNewNumber = false;
+        IsNewNumberEntered = false;
     } else {
         if(localDecimalMemory.indexOf(".") === -1) {
             localDecimalMemory += "."
@@ -79,14 +80,14 @@ function decimal (argument) {
 
 buttonC.addEventListener('click', function (e) {
     display.value = "0" 
-    MemoryNewNumber = true;
+    IsNewNumberEntered = true;
     MemoryCurrentNumber = 0,
     MemoryPendingOperation = "";
 });
 
 buttonCE.addEventListener('click', function (e) {
     display.value = "0"
-    MemoryNewNumber = true;
+    IsNewNumberEntered = true;
 });
 
 
