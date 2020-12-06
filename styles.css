@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    color: #000000;
+}
+
+#time {
+    font-size: 6rem;
+}
+
+.greeting {
+    margin-bottom: 40px;
+}
+
+div {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+@media (max-width: 500px) {
+    #time {
+        font-size: 4rem;
+    }
+
+    div {
+        font-size: 14px;
+    }
+}
