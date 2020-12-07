@@ -1,7 +1,7 @@
 const time = document.getElementById('time'),
-			greeting = document.getElementById('greeting'),
-			name = document.getElementById('name'),
-			focus = document.getElementById('focus');
+	greeting = document.getElementById('greeting'),
+	name = document.getElementById('name'),
+	focus = document.getElementById('focus');
 
 function showTime() {
 	let today = new Date(),
@@ -18,28 +18,25 @@ function addZero (n) {
 	return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
-function setBgGreet () {
+function setBgGreet() {
 	let today = new Date(),
-			hour = today.getHours();
-			if (hour < 12 && hour > 6) {
-				document.body.style.backgroundImage = "url('../images/morning.jpg')";
-				document.body.style.backgroundSize = "100% 100%";
-				greeting.textContent = 'Good Morning';
-			} else if (hour < 18) {
-				document.body.style.backgroundImage = "url('../images/day.jpg')";
-				document.body.style.backgroundSize = "100% 100%";
-				document.body.style.color = "#FFFFFF";
-				greeting.textContent = 'Good Afternoon';
-			} else if (hour < 22) {
-				document.body.style.backgroundImage = "url('../images/evening.jpg')";
-				document.body.style.backgroundSize = "100% 100%";
-				document.body.style.color = "#FFFFFF";
-				greeting.textContent = 'Good Evening';
-			} else 
-				document.body.style.backgroundImage = "url('../images/night.jpg')";
-				document.body.style.backgroundSize = "100% 100%";
-				document.body.style.color = "#FFFFFF";
-				greeting.textContent = 'Good Night';
+		hour = today.getHours();
+
+	if (hour < 12) {
+		document.body.style.backgroundImage = "url('../images/morning.jpg')";
+		document.body.style.backgroundSize = "100% 100%";
+		greeting.textContent = 'Good Morning, ';
+	} else if (hour < 18) {
+		document.body.style.backgroundImage = "url('../images/day.jpg')";
+		document.body.style.backgroundSize = "100% 100%";
+		document.body.style.color = "#FFFFFF";
+		greeting.textContent = 'Good Afternoon, ';
+	} else {
+		document.body.style.backgroundImage = "url('../images/evening.jpg')";
+		document.body.style.backgroundSize = "100% 100%";
+		document.body.style.color = "#FFFFFF";
+		greeting.textContent = 'Good Evening, ';
+	} 
 }
 
 function getName() {
@@ -57,7 +54,7 @@ function setName(e) {
 			name.blur(); 
 		}
 	} else {
-		localStorage.setItem('name', e.target.innerText);
+	  localStorage.setItem('name', e.target.innerText);
 	}
 }
 
