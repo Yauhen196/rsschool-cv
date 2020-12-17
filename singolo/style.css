@@ -373,8 +373,8 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: rgba(45, 48, 58, 0.5);
     transition: 0.5s;
+    background-color: rgba(45, 48, 58, 0.5);
   }
 
   .menu-box {
@@ -387,7 +387,6 @@ body {
     text-align: center;
     background-color: #2d303a;
     box-shadow: 5px 0px 10px 5px #000000;
-    transition-duration: 0.25s;
   }
 
   .menu-item {
@@ -398,7 +397,6 @@ body {
     line-height: 29px;
     text-decoration: none;
     text-align: start;
-    transition-duration: 0.25s;
   }
 
   .menu-box li:not(:last-child)::after {
