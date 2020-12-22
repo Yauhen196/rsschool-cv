@@ -38,7 +38,6 @@ body {
 }
 
 .logo-header {
-  font-weight: bold;
   font-size: 25px;
   line-height: 25px;
   color: #ffffff;
@@ -267,7 +266,7 @@ body {
   }
 
   .slider .wrapper {
-    padding: 0 28px;
+    padding: 0 30px;
   }
 
   .phone-vertical {
@@ -307,18 +306,18 @@ body {
     width: 100%;
   }
 
-  .portfolio .wrapper > p {
+  .portfolio .section-text {
     margin-bottom: 12px;
   }
 
-  .portfolio .wrapper > ul {
+  .p-list {
     margin-bottom: 28px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .header {
-    padding: 29px 0 23px;
+    padding-bottom: 23px;
     border-bottom: none;
   }
 
@@ -366,15 +365,14 @@ body {
   }
 
   .toggled-menu-box {
-    display: block;
     position: fixed;
     visibility: hidden;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    transition: 0.5s;
-    background-color: rgba(45, 48, 58, 0.5);
+    transition: all 0.5s;
+    background-color: transparent;
   }
 
   .menu-box {
@@ -382,11 +380,13 @@ body {
     position: fixed;
     width: 278px;
     height: 100%;
+    left: -350px;
     padding: 0;
     list-style: none;
     text-align: center;
     background-color: #2d303a;
     box-shadow: 5px 0px 10px 5px #000000;
+    transition: all 0.5s;
   }
 
   .menu-item {
@@ -416,7 +416,11 @@ body {
 
   #menu-toggle:checked ~ nav .toggled-menu-box {
     visibility: visible;
-    left: 0;
+    background-color: rgba(45, 48, 58, 0.5);
+  }
+
+  #menu-toggle:checked ~ nav .menu-box {
+    transform: translateX(350px);
   }
 
   #menu-toggle:checked ~ .logo {
@@ -445,21 +449,19 @@ body {
     border-bottom: 2px solid #ea676b;
   }
 
-  .services .wrapper {
-    padding: 0 30px;
-    margin: 0 auto;
-  }
-
   .services {
     padding-top: 25px;
     padding-bottom: 0;
   }
 
+  .services .wrapper {
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+
   .services-list {
-    display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 30px;
-    padding-top: 28px;
     padding-bottom: 15px;
   }
 
@@ -481,11 +483,7 @@ body {
     display: none;
   }
 
-  .footer {
-    padding: 22px 0;
-  }
-
-  .footer .footer-content {
+  .footer-content {
     justify-content: center;
   }
 
