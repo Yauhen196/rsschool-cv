@@ -8,14 +8,14 @@ let MemoryCurrentNumber = 0;
 let IsNewNumberEntered = false;
 let MemoryPendingOperation = '';
 
-for (let i=0; i<numbersBtns.length; i++) {
+for (let i = 0; i < numbersBtns.length; i++) {
     let numberBtn = numbersBtns[i];
     numberBtn.addEventListener('click', function (e) {
         pressNumber (e.target.name)
     });
 };
 
-for (let i=0; i<operationsBtns.length; i++) {
+for (let i = 0; i < operationsBtns.length; i++) {
     let operationBtn = operationsBtns[i];
     operationBtn.addEventListener('click', function (e) {
         doCalculations (e.target.name)
@@ -25,11 +25,11 @@ for (let i=0; i<operationsBtns.length; i++) {
 decimalBtn.addEventListener('click', makeDecimal);
 
 function pressNumber (number) {
-    if(IsNewNumberEntered) {
+    if (IsNewNumberEntered) { 
         display.value = number;
         IsNewNumberEntered = false;
     } else {
-        if(display.value === "0") {
+        if (display.value === "0") {
             display.value = number;
         } else {
             display.value += number;
@@ -40,7 +40,7 @@ function pressNumber (number) {
 function doCalculations (op) {
     let localOperationMemory = +display.value;
     
-    if(IsNewNumberEntered && MemoryPendingOperation !== "result") {
+    if (IsNewNumberEntered && MemoryPendingOperation !== "result") {
         display.value = MemoryCurrentNumber;
     } else {
         IsNewNumberEntered = true;
@@ -53,13 +53,13 @@ function doCalculations (op) {
         } else if (MemoryPendingOperation === "divide") {
             MemoryCurrentNumber /= localOperationMemory;  
         } else {
-            MemoryCurrentNumber = +localOperationMemory;  
+            MemoryCurrentNumber = localOperationMemory;  
         }
         display.value = MemoryCurrentNumber;
         MemoryPendingOperation = op;
     };
 
-    if(IsNewNumberEntered && MemoryPendingOperation === "square") {
+    if (IsNewNumberEntered && MemoryPendingOperation === "square") {
         display.value = MemoryCurrentNumber ** 2;
     } 
 };
@@ -67,11 +67,11 @@ function doCalculations (op) {
 function makeDecimal (argument) {
     let localDecimalMemory = display.value;
     
-    if(IsNewNumberEntered) {
+    if (IsNewNumberEntered) {
         localDecimalMemory = "0.";
         IsNewNumberEntered = false;
     } else {
-        if(localDecimalMemory.indexOf(".") === -1) {
+        if (localDecimalMemory.indexOf(".") === -1) {
             localDecimalMemory += "."
         }
     };
