@@ -1,14 +1,14 @@
 const time = document.getElementById('time'),
   greeting = document.getElementById('greeting'),
   name = document.getElementById('name'),
-	focus = document.getElementById('focus'),
-	showAmPm = true;
+  focus = document.getElementById('focus'), 
+  showAmPm = true;
 
 function showTime() {
   let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
-		sec = today.getSeconds();
+	sec = today.getSeconds();
 	
 	const amPm = hour >= 12 ? 'PM' : 'AM';
 
@@ -45,11 +45,7 @@ function setBgGreet() {
 }
 
 function getName() {
-  if (localStorage.getItem('name') === null) {
-		name.textContent = '[Enter Your name]';
-  } else {
-    name.textContent = localStorage.getItem('name');
-  }
+   name.textContent = localStorage.getItem('name') === null ? '[Enter Your name]' : localStorage.getItem('name');
 }
 
 function setName(e) {
