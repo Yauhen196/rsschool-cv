@@ -31,8 +31,7 @@ function pressNumber (number) {
         display.value = number;
         IsNewNumberEntered = false;
     } else {
-        (display.value === "0") ? display.value = number :
-         display.value += number;
+        (display.value === "0") ? display.value = number : display.value += number;
     };
 };
 
