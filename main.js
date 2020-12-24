@@ -64,10 +64,8 @@ function makeDecimal () {
     if (IsNewNumberEntered) {
         localDecimalMemory = "0.";
         IsNewNumberEntered = false;
-    } else {
-        if (localDecimalMemory.indexOf(".") === -1) {
-            localDecimalMemory += ".";
-        }
+    } else if (localDecimalMemory.indexOf(".") === -1) {
+        localDecimalMemory += ".";
     };
     display.value = localDecimalMemory;
 };
