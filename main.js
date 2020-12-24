@@ -1,93 +1,87 @@
-let numbersBtns = document.querySelectorAll('.button-number');
-let operationsBtns = document.querySelectorAll('.button-operator');
-let buttonC = document.getElementById ('c');
-let buttonCE = document.getElementById ('ce');
-let decimalBtn = document.getElementById('decimal');
-let display = document.getElementById('display');
+const numbersBtns = document.querySelectorAll('.button-number');
+const operationsBtns = document.querySelectorAll('.button-operator');
+const buttonC = document.getElementById ('c');
+const buttonCE = document.getElementById ('ce');
+const decimalBtn = document.getElementById('decimal');
+const display = document.getElementById('display');
 let MemoryCurrentNumber = 0;
 let IsNewNumberEntered = false;
 let MemoryPendingOperation = '';
 
 for (let i = 0; i < numbersBtns.length; i++) {
-    let numberBtn = numbersBtns[i];
+    const numberBtn = numbersBtns[i];
     numberBtn.addEventListener('click', function (e) {
-        pressNumber (e.target.name)
+        pressNumber (e.target.value)
     });
 };
 
 for (let i = 0; i < operationsBtns.length; i++) {
-    let operationBtn = operationsBtns[i];
+    const operationBtn = operationsBtns[i];
     operationBtn.addEventListener('click', function (e) {
-        doCalculations (e.target.name)
+        doCalculations (e.target.value)
     });
 };
 
 decimalBtn.addEventListener('click', makeDecimal);
+buttonC.addEventListener('click', clearAll);
+buttonCE.addEventListener('click', clearLast);
 
 function pressNumber (number) {
     if (IsNewNumberEntered) { 
         display.value = number;
         IsNewNumberEntered = false;
     } else {
-        if (display.value === "0") {
-            display.value = number;
-        } else {
-            display.value += number;
-        };
+        (display.value === "0") ? display.value = number :
+         display.value += number;
     };
 };
 
 function doCalculations (op) {
-    let localOperationMemory = +display.value;
+    const localOperationMemory = +display.value;
     
-    if (IsNewNumberEntered && MemoryPendingOperation !== "result") {
+    if (IsNewNumberEntered && MemoryPendingOperation !== "=") {
         display.value = MemoryCurrentNumber;
     } else {
         IsNewNumberEntered = true;
-        if (MemoryPendingOperation === "plus") {
-            MemoryCurrentNumber += localOperationMemory;  
-        } else if (MemoryPendingOperation === "minus") {
-            MemoryCurrentNumber -= localOperationMemory;  
-        } else if (MemoryPendingOperation === "multiply") {
-            MemoryCurrentNumber *= localOperationMemory;  
-        } else if (MemoryPendingOperation === "divide") {
-            MemoryCurrentNumber /= localOperationMemory;  
-        } else {
-            MemoryCurrentNumber = localOperationMemory;  
-        }
+        (MemoryPendingOperation === "+") ? MemoryCurrentNumber += localOperationMemory :
+        (MemoryPendingOperation === "-") ? MemoryCurrentNumber -= localOperationMemory :
+        (MemoryPendingOperation === "X") ? MemoryCurrentNumber *= localOperationMemory :
+        (MemoryPendingOperation === "/") ? MemoryCurrentNumber /= localOperationMemory :
+        MemoryCurrentNumber = localOperationMemory;
+
         display.value = MemoryCurrentNumber;
         MemoryPendingOperation = op;
     };
 
-    if (IsNewNumberEntered && MemoryPendingOperation === "square") {
+    if (IsNewNumberEntered && MemoryPendingOperation === "^2") {
         display.value = MemoryCurrentNumber ** 2;
     } 
 };
 
-function makeDecimal (argument) {
+function makeDecimal () {
     let localDecimalMemory = display.value;
-    
+
     if (IsNewNumberEntered) {
         localDecimalMemory = "0.";
         IsNewNumberEntered = false;
     } else {
         if (localDecimalMemory.indexOf(".") === -1) {
-            localDecimalMemory += "."
+            localDecimalMemory += ".";
         }
     };
     display.value = localDecimalMemory;
 };
 
-buttonC.addEventListener('click', function (e) {
+function clearAll () {
     display.value = "0" 
     IsNewNumberEntered = true;
     MemoryCurrentNumber = 0,
     MemoryPendingOperation = "";
-});
+};
 
-buttonCE.addEventListener('click', function (e) {
+function clearLast () {
     display.value = "0"
     IsNewNumberEntered = true;
-});
+};
 
 
