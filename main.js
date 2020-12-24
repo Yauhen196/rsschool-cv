@@ -1,17 +1,22 @@
 const time = document.getElementById('time'),
   greeting = document.getElementById('greeting'),
   name = document.getElementById('name'),
-  focus = document.getElementById('focus');
+	focus = document.getElementById('focus'),
+	showAmPm = true;
 
 function showTime() {
   let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
-    sec = today.getSeconds();
+		sec = today.getSeconds();
+	
+	const amPm = hour >= 12 ? 'PM' : 'AM';
 
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+	hour = hour % 12 || 12;
+		
+	time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
 
-    setTimeout(showTime, 1000);
+  setTimeout(showTime, 1000);
 }
 
 function addZero (n) {
