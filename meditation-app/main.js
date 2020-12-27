@@ -37,11 +37,11 @@ const app = () => {
       if (song.paused) {
         song.play();
         video.play();
-        play.src = "/svg/pause.svg";
+        play.src = "/meditation-app/svg/pause.svg";
       } else {
         song.pause();
         video.pause();
-        play.src = "/svg/play.svg"
+        play.src = "/meditation-app/svg/play.svg"
       };
     };
 
@@ -59,7 +59,7 @@ const app = () => {
       if(currentTime >= fakeDuration) {
         song.pause();
         song.currentTime = 0;
-        play.src = '/svg/play.svg';
+        play.src = '/meditation-app/svg/play.svg';
         video.pause();
       };
     };
