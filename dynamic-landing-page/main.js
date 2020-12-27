@@ -1,14 +1,16 @@
-const time = document.getElementById('time'),
-  greeting = document.getElementById('greeting'),
-  name = document.getElementById('name'),
-  focus = document.getElementById('focus'), 
-  showAmPm = true;
+const time = document.getElementById('time');
+const greeting = document.getElementById('greeting');
+const name = document.getElementById('name');
+const focus = document.getElementById('focus'); 
+const showAmPm = true;
+const codeOfKeyEnter = 13;
+
 
 function showTime() {
-  let today = new Date(),
-    hour = today.getHours(),
-    min = today.getMinutes(),
-	sec = today.getSeconds();
+  let today = new Date();
+  let hour = today.getHours();
+  let min = today.getMinutes();
+	let sec = today.getSeconds();
 	
 	const amPm = hour >= 12 ? 'PM' : 'AM';
 
@@ -24,22 +26,18 @@ function addZero (n) {
 }
 
 function setBgGreet() {
-  let today = new Date(),
-    hour = today.getHours();
+  let today = new Date();
+  let hour = today.getHours();
 
   if (hour < 12) {
-    document.body.style.backgroundImage = "url('../images/morning.jpg')";
-    document.body.style.backgroundSize = "100% 100%";
+    document.body.style.backgroundImage = "url('../dynamic-landing-page/images/morning.jpg')";
+    document.body.style.color = "#000000";
     greeting.textContent = 'Good Morning, ';
   } else if (hour < 18) {
-    document.body.style.backgroundImage = "url('../images/day.jpg')";
-    document.body.style.backgroundSize = "100% 100%";
-    document.body.style.color = "#FFFFFF";
+    document.body.style.backgroundImage = "url('../dynamic-landing-page/images/day.jpg')";
     greeting.textContent = 'Good Afternoon, ';
   } else {
-    document.body.style.backgroundImage = "url('../images/evening.jpg')";
-    document.body.style.backgroundSize = "100% 100%";
-    document.body.style.color = "#FFFFFF";
+    document.body.style.backgroundImage = "url('../dynamic-landing-page/images/evening.jpg')";
     greeting.textContent = 'Good Evening, ';
   } 
 }
@@ -50,7 +48,7 @@ function getName() {
 
 function setName(e) {
   if (e.type === 'keypress') {
-    if (e.which == 13 || e.keyCode == 13) {
+    if (e.which == codeOfKeyEnter || e.keyCode == codeOfKeyEnter) {
       localStorage.setItem('name', e.target.innerText);
       name.blur(); 
     }
@@ -60,11 +58,7 @@ function setName(e) {
 }
 
 function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focus.textContent = '[Enter Your focus]';
-  } else {
-    focus.textContent = localStorage.getItem('focus');
-  }
+  focus.textContent = localStorage.getItem('focus') === null ? '[Enter Your focus]' : localStorage.getItem('focus');
 }
 
 function setFocus(e) {

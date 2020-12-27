@@ -13,7 +13,9 @@ body {
     justify-content: center;
     text-align: center;
     height: 100vh;
-    color: #000000;
+    color: #ffffff;
+    background: no-repeat;
+    background-size: cover;
 }
 
 #time {
