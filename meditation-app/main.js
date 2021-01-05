@@ -3,7 +3,6 @@ const app = () => {
     const play = document.querySelector('.play');
     const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.vid-container video');
-
     const sounds = document.querySelectorAll('.sound-picker button');
     const timeDisplay = document.querySelector('.time-display');
     const timeSelect = document.querySelectorAll('.time-select button');
@@ -32,7 +31,6 @@ const app = () => {
       });
     });
 
-
     const checkPlaying = (song) => {
       if (song.paused) {
         song.play();
@@ -50,7 +48,6 @@ const app = () => {
       let elapsed = fakeDuration - currentTime;
       let seconds = Math.floor(elapsed % 60);
       let minutes = Math.floor(elapsed / 60);
-
       let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
 
