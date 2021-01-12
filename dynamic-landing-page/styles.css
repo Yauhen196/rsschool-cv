@@ -16,6 +16,7 @@ body {
     color: #ffffff;
     background: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 #time {
