@@ -10,13 +10,12 @@ function showTime() {
   let today = new Date();
   let hour = today.getHours();
   let min = today.getMinutes();
-	let sec = today.getSeconds();
-	
-	const amPm = hour >= 12 ? 'PM' : 'AM';
+  let sec = today.getSeconds();
+  const amPm = hour >= 12 ? 'PM' : 'AM';
 
-	hour = hour % 12 || 12;
+  hour = hour % 12 || 12;
 		
-	time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
+  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
 
   setTimeout(showTime, 1000);
 }
@@ -43,7 +42,7 @@ function setBgGreet() {
 }
 
 function getName() {
-   name.textContent = localStorage.getItem('name') === null ? '[Enter Your name]' : localStorage.getItem('name');
+  name.textContent = localStorage.getItem('name') === null ? '[Enter Your name]' : localStorage.getItem('name');
 }
 
 function setName(e) {
@@ -76,7 +75,6 @@ name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
-
 
 showTime();
 setBgGreet();
