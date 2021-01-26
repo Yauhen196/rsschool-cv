@@ -9,7 +9,7 @@
 	bottom: 0;
 	width: 100%;
 	padding: 5px 0;
-	background: #004134;
+	background: #a0a8a5;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 	user-select: none;
 	transition: bottom 0.4s;
@@ -30,7 +30,7 @@
 	margin: 3px;
 	border-radius: 4px;
 	border: none;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(5, 150, 240, 0.8);
 	color: #ffffff;
 	font-size: 1.05rem;
 	outline: none;
@@ -73,5 +73,5 @@
 }
 
 .keyboard__key--dark {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(5, 150, 240, 0.8);
 }
