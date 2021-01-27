@@ -8,11 +8,8 @@ const ranges = player.querySelectorAll('.player_slider');
 
 function togglePlay() {
   const method = video.paused ? 'play' : 'pause';
-  video[method]();
-}
-
-function updateButton() {
   const icon = this.paused ? '►' : '❚ ❚';
+  video[method]();
   toggle.textContent = icon;
 }
 
@@ -35,8 +32,6 @@ function scrub(e) {
 }
 
 video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
@@ -44,8 +39,8 @@ skipButtons.forEach(button => button.addEventListener('click', skip));
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
 
-let mousedown = false;
+let isMouseDown = false;
 progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+progress.addEventListener('mousemove', (e) => isMouseDown && scrub(e));
+progress.addEventListener('mousedown', () => isMouseDown = true);
+progress.addEventListener('mouseup', () => isMouseDown = false);
