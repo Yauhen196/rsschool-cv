@@ -13,10 +13,25 @@ function playSound(e) {
   audio.play();
 }
 
+function playsoundOnClick() {
+  const audioClick = d 
+}
+
 const keys = Array.from(document.querySelectorAll('.key'));
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', playSound);
 
-keys.forEach(key => key.addEventListener('click', playSound));
+keys.forEach(key => key.addEventListener('click', playByMouse));
+
+function playByMouse() {
+  const keyCode = this.getAttribute('data-key');
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${keyCode}"]`);
+  audio.currentTime = 0;
+  audio.play();
+  key.classList.add('playing');
+}
+
+
 
 
